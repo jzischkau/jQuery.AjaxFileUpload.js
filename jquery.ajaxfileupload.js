@@ -104,7 +104,8 @@
           //  and clean up after ourselves. 
           */
           var handleResponse = function(loadedFrame, element) {
-            var response, responseStr = loadedFrame.contentWindow.document.body.innerHTML;
+            var response, responseStr = $(loadedFrame).contents().text();
+            //var response, responseStr = loadedFrame.contentWindow.document.body.innerHTML;
             try {
               //response = $.parseJSON($.trim(responseStr));
               response = JSON.parse(responseStr);
